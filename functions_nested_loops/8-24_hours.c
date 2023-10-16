@@ -1,5 +1,5 @@
 #include <stdio.h>
-i#include "main.h"
+#include "main.h"
 
 /**
  * jack_bauer - prints every minute of the day
