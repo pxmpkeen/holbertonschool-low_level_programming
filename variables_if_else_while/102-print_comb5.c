@@ -17,15 +17,18 @@ int main(void)
 			{
 				for (l = 48; l <= 57; l++)
 				{
-					if (j <= k)
+					if ((10 * (i - 48) + (j - 48)) < (10 * (k - 48) + (l - 48)))
 					{
 					putchar(i);
 					putchar(j);
 					putchar(' ');
 					putchar(k);
 					putchar(l);
+					if ((10 * (i - 48) + (j - 48)) != 98 && (10 * (k - 48) + (l - 48)) != 99)
+					{
 					putchar(',');
 					putchar(' ');
+					}
 					}
 				}
 			}
