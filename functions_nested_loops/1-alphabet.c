@@ -2,18 +2,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * print_alphabet: prints the alphabet
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-	print_alphabet();
-	_putchar('\n');
-	return (0);
-}
-
-void print_alphabet()
+void print_alphabet(void)
 {
 	int i;
 
@@ -21,4 +14,5 @@ void print_alphabet()
 	{
 		_putchar(i);
 	}
+	_putchar('\n');
 }
