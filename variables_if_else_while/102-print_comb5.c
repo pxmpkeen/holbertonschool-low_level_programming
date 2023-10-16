@@ -24,11 +24,8 @@ int main(void)
 					putchar(' ');
 					putchar(k);
 					putchar(l);
-					if ((10 * (i - 48) + (j - 48)) != 98 && (10 * (k - 48) + (l - 48)) != 99)
-					{
 					putchar(',');
 					putchar(' ');
-					}
 					}
 				}
 			}
