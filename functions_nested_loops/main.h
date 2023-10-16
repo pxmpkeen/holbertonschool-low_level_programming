@@ -1,6 +1,6 @@
-#ifndef MAIN_H_   /* Include guard */
+#ifndef MAIN_H_
 #define MAIN_H_
 
-int _putchar(char c);  /* An example function declaration */
+int _putchar(char c);
 
-#endif // MAIN_H_
+#endif
