@@ -12,3 +12,13 @@ int main(void)
 	_putchar('\n');
 	return (0);
 }
+
+void print_alphabet()
+{
+	int i;
+
+	for (i = 97; i < 122; i++)
+	{
+		_putchar(i);
+	}
+}
