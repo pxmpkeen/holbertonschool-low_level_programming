@@ -11,8 +11,10 @@ int print_last_digit(int n)
 {
 	if (n < 0)
 	{
-		_putchar(((n - 2 * n) % 10) + 48);
-		return ((n - 2 * n) % 10);
+		int m = n - 2 * n;
+
+		_putchar((m % 10) + 48);
+		return (m % 10);
 	}
 	else
 	{
