@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-#include <unistd.h>
+
 /**
  * print_last_digit - prints the last digit of a number
  * @n: The number to be checked
@@ -22,9 +22,4 @@ int print_last_digit(int n)
 		_putchar((n % 10) + 48);
 		return (n % 10);
 	}
-}
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
