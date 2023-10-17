@@ -8,6 +8,7 @@
 int main(void)
 {
 	int i;
+
 	long double fib, init = 1, sec = 2;
 
 	printf("%.0Lf, ", init);
