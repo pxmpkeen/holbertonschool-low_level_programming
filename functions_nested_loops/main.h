@@ -14,5 +14,10 @@ void times_table(void);
 int add(int, int);
 int power_of_ten(int n);
 void print_to_98(int n);
+void print_times_table(int n);
+void print_additional_nums(int, int);
+void print_additional_nums_bruh(int, int);
+void print_additionals(void);
+void content(int, int, int);
 
 #endif
