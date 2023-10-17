@@ -8,14 +8,14 @@
 int main(void)
 {
 	int i;
-	long int fib, init = 1, sec = 2;
+	long double fib, init = 1, sec = 2;
 
-	printf("%ld, ", init);
-	printf("%ld", sec);
+	printf("%.0Lf, ", init);
+	printf("%.0Lf", sec);
 	for (i = 0; i < 96; i++)
 	{
 		fib = init + sec;
-		printf(", %ld", fib);
+		printf(", %.0Lf", fib);
 		init = sec;
 		sec = fib;
 	}
