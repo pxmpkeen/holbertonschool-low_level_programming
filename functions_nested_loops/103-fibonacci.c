@@ -7,10 +7,9 @@
  */
 int main(void)
 {
-	int i;
 	long int fib, init = 1, sec = 2, sum = 3, sum_even = 2;
 
-	while (sum <= 4000000)
+	while (fib <= 4000000)
 	{
 		fib = init + sec;
 		init = sec;
