@@ -19,7 +19,7 @@ int add(int m, int n)
  *
  * Return: 10 in n-th degree
  */
-int power_of_ten(int n);
+int power_of_ten(int n)
 {
 	int i = 0, j = 1;
 
