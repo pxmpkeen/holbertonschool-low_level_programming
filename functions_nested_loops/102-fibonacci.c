@@ -12,7 +12,7 @@ int main(void)
 
 	printf("%ld, ", init);
 	printf("%ld", sec);
-	for (i = 0; i < 50; i++)
+	for (i = 0; i < 48; i++)
 	{
 		fib = init + sec;
 		printf(", %ld", fib);
