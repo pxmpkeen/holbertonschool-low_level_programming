@@ -83,7 +83,7 @@ void content(int i, int j, int n)
 	}
 	else if (j == n && i * j >= 10 && i * j <= 99)
 	{
-		print_additional_nums_bruh
+		print_additional_nums_bruh(i, j);
 	}
 	else if (j == n && i * j >= 100)
 	{
@@ -98,7 +98,7 @@ void content(int i, int j, int n)
 	}
 	else if (i >= 0 && i <= n && j > 0 && j < n && i * j >= 10 && i * j <= 99)
 	{
-		print_additional_nums_bruh();
+		print_additional_nums_bruh(i, j);
 		print_additionals();
 	}
 	else
