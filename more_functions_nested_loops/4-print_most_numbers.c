@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_numbers - checks
+ * print_most_numbers - checks
  *
  * Return: 1 if upper, otherwise 0
  */
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	int i;
 
