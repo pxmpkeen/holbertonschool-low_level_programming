@@ -7,6 +7,7 @@ CM=RM
 CFLAGS=-Wall -Werror -Wextra -pedantic
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+.PHONY: clean oclean fclean re
 clean:
 	$(CM) *~ $(NAME)
 oclean:
