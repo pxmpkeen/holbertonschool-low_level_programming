@@ -1,6 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
-#include <stdio.h>
 /**
  * print_number - prints n
  * @n: number
