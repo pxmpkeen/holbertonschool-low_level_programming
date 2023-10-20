@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 /**
  * main - entry point
  *
@@ -8,15 +8,17 @@
 
 int main(void)
 {	
-	long int i, j = 612852475143, lf;
-
-	for (i = 2; i < j; i++)
+	long i = 2, j = 612852475143;
+	
+	while (i != n)
 	{
-		if (j % i == 0 && i != j)
+		if (n % i == 0)
 		{
-			lf = i;
-			printf("%ld\n", i);
+			n /= i;
+			continue;
 		}
+		i++;
 	}
+	printf("%ld\n", n)
 	return (0);
 }
