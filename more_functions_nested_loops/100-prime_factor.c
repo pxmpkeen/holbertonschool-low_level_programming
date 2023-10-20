@@ -7,9 +7,9 @@
  */
 
 int main(void)
-{	
+{
 	long i = 2, n = 612852475143;
-	
+
 	while (i != n)
 	{
 		if (n % i == 0)
