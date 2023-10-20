@@ -15,7 +15,7 @@ int main(void)
 
 	printf("%lu, ", init);
 	printf("%lu", sec);
-	for (i = 2; i < 97; i++)
+	for (i = 2; i < 98; i++)
 	{
 		printf(", ");
 		if (init + sec > MAX || sec_1 > 0 || init_1 > 0)
