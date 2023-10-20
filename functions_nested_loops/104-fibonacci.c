@@ -32,7 +32,7 @@ int main(void)
 		{
 			fib = init + sec;
 			init = sec;
-			sec = fib
+			sec = fib;
 			printf("%lu", fib);
 		}
 	}
