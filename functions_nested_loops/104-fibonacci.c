@@ -34,7 +34,7 @@ int main(void)
 			fib = init + sec;
 			init = sec;
 			sec = fib;
-			printf("%lu", fib);
+			printf("%010lu", fib);
 		}
 	}
 	printf("\n");
