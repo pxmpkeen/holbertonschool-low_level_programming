@@ -1,40 +1,42 @@
 #include <stdio.h>
-#include "main.h"
-#define MAX 10000000000000
-
+#define l 10000000000
 /**
- * main - Entry point
+ * main - Something usefull
  *
- * Return: Always 0 (Success)
+ * Return: Something much more usefull
  */
 int main(void)
 {
-	int i;
+	unsigned long int a = 0;
+	unsigned long int b = 1;
+	int i = 0;
+	unsigned long int c, h1, h2, h3, f1 = 0, f2 = 0;
 
-	unsigned long int a, b, k, fib, init = 0, sec = 1, init_1 = 0, sec_1 = 0;
-
-	for (i = 0; i < 98; i++)
+	while (i <= 97)
 	{
-		if (i != 0)
-			printf(", ");
-		if (init + sec > MAX || sec_1 > 0 || init_1 > 0)
+		if (a + b > l || f1 > 0 || f2 > 0)
 		{
-			a = (init + sec) / MAX;
-			b = (init + sec) % MAX;
-			k = a + init_1 + sec_1;
-			init_1 = sec_1;
-			init = sec;
-			sec_1 = k;
-			sec = b;
-			printf("%lu%010lu", sec_1, sec);
+			h1 = (a + b) / l;
+			h2 = (a + b) % l;
+			h3 = f1 + f2 + h1;
+			f1 = f2, a = b;
+			b = h2, f2 = h3;
+			if (i != 97)
+			{
+				printf("%lu%010lu, ", f2, b);
+			}
+			else
+			{
+				printf("%lu%010lu", f2, b);
+			}
 		}
 		else
 		{
-			fib = init + sec;
-			init = sec;
-			sec = fib;
-			printf("%lu", fib);
+			c = a + b;
+			a = b, b = c;
+			printf("%lu, ", c);
 		}
+		i++;
 	}
 	printf("\n");
 	return (0);
