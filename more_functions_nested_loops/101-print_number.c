@@ -21,7 +21,7 @@ void print_number(int n)
 	while (i != 1)
 	{
 		_putchar((n / i) + 48);
-		n %= i;
+		n = n % i;
 		i /= 10;
 	}
 	_putchar((n % 10) + 48);
