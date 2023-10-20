@@ -11,7 +11,7 @@ int main(void)
 {
 	int i;
 
-	unsigned long int a, b, k, fib, init = 1, sec = 2, init_1 = 0, sec_1 = 0; 
+	unsigned long int a, b, k, fib, init = 1, sec = 2, init_1 = 0, sec_1 = 0;
 
 	printf("%lu, ", init);
 	printf("%lu", sec);
