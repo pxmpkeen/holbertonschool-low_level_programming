@@ -19,5 +19,6 @@ void print_additional_nums(int, int);
 void print_additional_nums_bruh(int, int);
 void print_additionals(void);
 void content(int, int, int);
+void print(long int);
 
 #endif

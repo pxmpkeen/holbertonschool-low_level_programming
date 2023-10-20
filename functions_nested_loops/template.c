@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "hinter.c" 
 /**
  * main - Entry point
  *
@@ -7,5 +7,6 @@
  */
 int main(void)
 {
+	print(100);
     return (0);
 }
