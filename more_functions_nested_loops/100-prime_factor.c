@@ -8,7 +8,7 @@
 
 int main(void)
 {	
-	long i = 2, j = 612852475143;
+	long i = 2, n = 612852475143;
 	
 	while (i != n)
 	{
