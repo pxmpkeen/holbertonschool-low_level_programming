@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _strncpy - copies str
  * @dest: destination
@@ -9,20 +10,20 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0;
+	int i = 0, j = 0;
 
-	while (*(src + i))
+	while (j + i < n)
 	{
-		i++;
-	}
-	if (n <= i)
-	{
-		i = 0;
-		while (n <= i)
+		if (*(src + j) != '\0')
 		{
-			*(dest + i) = *(src + i);
+			*(dest + j) = *(src + j);
+			j++;
+		}
+		else
+		{
+			*(dest + j + i) = '\0';
+			i++;
 		}
 	}
-
 	return (dest);
 }
