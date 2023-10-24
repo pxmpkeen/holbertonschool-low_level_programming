@@ -20,9 +20,9 @@ char *_strncat(char *dest, char *src, int n)
 		j++;
 	}
 
-	j = 0;
 	if (i != 0 && j != 0)
 	{
+		j = 0;
 		while (j < n)
 		{
 			*(dest + i) = *(src + j);
