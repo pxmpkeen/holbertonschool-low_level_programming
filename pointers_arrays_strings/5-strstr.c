@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+#include <stdio.h>
 /**
  * _strstr - func
  * @haystack: char
@@ -25,4 +26,14 @@ char *_strstr(char *haystack, char *needle)
 	}
 
 	return (NULL);
+}
+int main(void)
+{
+    char *s = "hello, worls";
+    char *f = "world";
+    char *t;
+
+    t = _strstr(s, f);
+    printf("%s\n", t);
+    return (0);
 }
