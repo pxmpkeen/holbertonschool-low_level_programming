@@ -9,9 +9,6 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-
-	int i = 0;
-
 	while (*haystack)
 	{
 		char *h = haystack;
