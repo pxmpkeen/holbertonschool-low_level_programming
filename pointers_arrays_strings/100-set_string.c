@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * set_string - func
  * @s: s
