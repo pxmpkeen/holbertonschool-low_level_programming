@@ -5,17 +5,23 @@
  *
  * Return: bruh
  */
-void print(int);
-
 void print_number(int n)
 {
 	print(n);
 }
+
+/**
+ * print - prints
+ * @n: int
+ *
+ * Return: it's void
+ */
 void print(int n)
 {
 	unsigned int k;
 
-	if (n < 0) {
+	if (n < 0)
+	{
 		_putchar(45);
 		k = -n;
 	}
