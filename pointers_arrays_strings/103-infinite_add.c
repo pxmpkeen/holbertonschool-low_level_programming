@@ -5,7 +5,7 @@
  * @n1: num1
  * @n2: num2
  * @r: final num
- * size_r: size of final num
+ * @size_r: size of final num
  *
  * Return: char
  */
@@ -26,12 +26,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		n1d = (i < n1s) ? (n1[n1s - i - 1] - 48) : 0;
 		n2d = (i < n2s) ? (n2[n2s - i - 1] - 48) : 0;
-		
+
 		sum = n1d + n2d + carry;
 		*(r_arr + i) = sum % 10;
 		carry = sum / 10;
 
-        i++;
+		i++;
 	}
 	if (carry > 0)
 	{
