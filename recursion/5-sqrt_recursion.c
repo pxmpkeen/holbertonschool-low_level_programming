@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * _helper - helper
- * @n: n
+ * @x: x
+ * @y: y
  * Return: int
  */
 int _helper(int x, int y)
@@ -14,8 +15,7 @@ int _helper(int x, int y)
 }
 /**
  * _sqrt_recursion - natural square root of a number
- * @x :checker
- * @y: checker
+ * @n: n
  *
  * Return: int
  */
