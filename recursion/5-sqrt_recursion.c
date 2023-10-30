@@ -1,12 +1,7 @@
 #include "main.h"
-
 /**
- * _sqrt_recursion - natural square root of a number
- * _helper - returns the value of x raised to the power of y
- * @n: The character to print
- * @x :checker
- * @y: checker
- *
+ * _helper - helper
+ * @n: n
  * Return: int
  */
 int _helper(int x, int y)
@@ -17,6 +12,13 @@ int _helper(int x, int y)
 		return (-1);
 	return (_helper(x + 1, y));
 }
+/**
+ * _sqrt_recursion - natural square root of a number
+ * @x :checker
+ * @y: checker
+ *
+ * Return: int
+ */
 int _sqrt_recursion(int n)
 {
 
