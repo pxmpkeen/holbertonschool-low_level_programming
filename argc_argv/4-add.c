@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - entry point
  * @argc: argc
@@ -9,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, k = 0;
+	int i = 1, k = 0, l;
 
 	if (argc == 1)
 		printf("0\n");
@@ -22,10 +23,15 @@ int main(int argc, char *argv[])
 	{
 		while (i < argc)
 		{
-			if (*argv[i] < 48 || *argv[i] > 57)
+			l = 0;
+			while (l < strlen(argv[i]))
 			{
-				printf("Error\n");
-				return (1);
+				if (argv[i][l] <= 48 || argv[i][l] >= 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+				l++;
 			}
 			k += atoi(argv[i]);
 			i++;
