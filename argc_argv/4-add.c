@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			k += atoi(argv[i]);
 			i++;
 		}
-		printf("%d\n", k);
+		printf("%ld\n", k);
 	}
 
 	return (0);
