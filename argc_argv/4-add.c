@@ -10,8 +10,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, k = 0;
-	long unsigned int l;
+	int i = 1;
+	unsigned long int l, k = 0;
 
 	if (argc == 1)
 		printf("0\n");
