@@ -9,8 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int k = 1;
-
 	if (argc <= 2)
 	{
 		printf("Error\n");
