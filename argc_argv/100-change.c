@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 			coin %= currency[i];
 			i++;
 		}
-		printf ("%d\n", cents);
+		printf("%d\n", cents);
 	}
 
 	return (0);
