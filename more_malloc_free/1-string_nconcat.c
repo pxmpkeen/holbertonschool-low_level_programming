@@ -43,18 +43,3 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	return (str);
 }
-int main(void)
-{
-	char *s;
-
-	s = string_nconcat("Hello", "", 12);
-	if (s == NULL)
-	{
-		printf("failed\n");
-		return (1);
-	}
-	printf("%s\n", s);
-	free(s);
-	return (0);
-	return (0);
-}
