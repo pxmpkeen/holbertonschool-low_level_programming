@@ -23,7 +23,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		while (*(s1 + i))
 			i++;
 	}
-
 	if (s2 == NULL)
 		j = 0;
 	else
@@ -31,18 +30,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		while (*(s2 + j))
 			j++;
 	}
-
 	if (n >= j)
 		n = j;
-
 	str = malloc(sizeof(char) * (i + n + 1));
-
 	if (str == NULL)
 		return (NULL);
-
 	i = 0;
 	j = 0;
-
 	while (*(s1 + i))
 	{
 		*(str + i) = *(s1 + i);
@@ -54,17 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		j++;
 		i++;
 	}
-
 	str[i] = 0;
 
 	return (str);
-}
-int main(void)
-{
-    char *concat;
-
-    concat = string_nconcat("Best ", NULL, 6);
-    printf("%s\n", concat);
-    free(concat);
-    return (0);
 }
