@@ -16,8 +16,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *str;
 	unsigned int i = 0;
 
-	int l1 = (s1 == NULL) ? 0 : strlen(s1);
-	int l2 = (s2 == NULL) ?
+	unsigned int l1 = (s1 == NULL) ? 0 : strlen(s1);
+	unsigned int l2 = (s2 == NULL) ?
 		0 : (strlen(s2) >= n) * n + (strlen(s2) < n) * strlen(s2);
 
 	str = malloc(sizeof(char) * (l1 + l2 + 1));
@@ -42,4 +42,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	str[l1 + l2] = 0;
 
 	return (str);
+}
+int main(void)
+{
+	char *s;
+
+	s = string_nconcat("Hello", "", 12);
+	if (s == NULL)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	printf("%s\n", s);
+	free(s);
+	return (0);
+	return (0);
 }
