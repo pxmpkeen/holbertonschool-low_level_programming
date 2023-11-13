@@ -14,10 +14,11 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	int cl = (s2 != NULL && strlen(s2) <= n);
-	int cg = (s2 != NULL && strlen(s2) > n);
-	unsigned int i, l1 = (s1 == NULL) ? 0 : strlen(s1);
-	unsigned int l2 = 0 * (s2 == NULL) + cl * strlen(s2) + cg * n;
+	unsigned int i = 0;
+
+	int l1 = (s1 == NULL) ? 0 : strlen(s1);
+	int l2 = (s2 == NULL) ?
+		0 : (strlen(s2) >= n) * n + (strlen(s2) < n) * strlen(s2);
 
 	str = malloc(sizeof(char) * (l1 + l2 + 1));
 
@@ -38,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 
-	str[l1 + l2] = 0; 
+	str[l1 + l2] = 0;
 
 	return (str);
 }
@@ -46,7 +47,25 @@ int main(void)
 {
 	char *s;
 
-	s = string_nconcat("Hello", "", 12);
+	s = string_nconcat("Hello", NULL, 12);
+	if (s == NULL)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	printf("%s\n", s);
+	free(s);
+
+	s = string_nconcat(NULL, "Hello", 0);
+	if (s == NULL)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	printf("%s\n", s);
+	free(s);
+
+	s = string_nconcat(NULL, NULL, 10);
 	if (s == NULL)
 	{
 		printf("failed\n");
