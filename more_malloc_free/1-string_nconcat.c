@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdio.h>
 /**
  * string_nconcat - concatenates strings
  * @s1: first
@@ -16,7 +17,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 
 	if (s1 == NULL)
-		i = 1;
+		i = 0;
 	else
 	{
 		while (*(s1 + i))
@@ -24,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	if (s2 == NULL)
-		j = 1;
+		j = 0;
 	else
 	{
 		while (*(s2 + j))
@@ -57,4 +58,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	str[i] = 0;
 
 	return (str);
+}
+int main(void)
+{
+    char *concat;
+
+    concat = string_nconcat("Best ", NULL, 6);
+    printf("%s\n", concat);
+    free(concat);
+    return (0);
 }
