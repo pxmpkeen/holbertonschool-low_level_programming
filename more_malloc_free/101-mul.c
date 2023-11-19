@@ -10,7 +10,6 @@
  */
 int main(int argc, char **argv)
 {
-	// printf '3+3\n' | bc
 	int i, j, k;
 	char *s, p[8] = "printf '", b[8] = "\n' | bc";
 
