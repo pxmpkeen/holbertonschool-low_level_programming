@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 	f1l = _checknum(argv, 1), f2l = _checknum(argv, 2);
-	_zero_checker(argv), fl = f1l + f2l, nout = malloc(fl);
+	_zero_checker(argv), fl = f1l + f2l, nout = malloc(fl + 1);
 	if (nout == NULL)
 		printf("Error\n"), exit(98);
 	nout = _array_initializer(nout, fl);
