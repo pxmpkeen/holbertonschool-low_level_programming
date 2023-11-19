@@ -39,5 +39,6 @@ int main(int argc, char **argv)
 
 	system(s);
 	free(s);
+	exit(0);
 	return (0);
 }
