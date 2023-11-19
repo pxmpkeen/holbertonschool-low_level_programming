@@ -11,19 +11,18 @@
 int main(int argc, char **argv)
 {
 	int i, j, k;
-	char *s, p[8] = "printf '", b[8] = "\n' | bc";
-
+	char *s, p[8] = "printf '", b[33] = "\n' | bc | tr -d '\\\\\n' && echo";
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
 	for (i = 0; argv[1][i]; i++)
 		if (argv[1][i] > 57 || argv[1][i] < 48)
 			printf("Error\n"), exit(98);
-	for (j = 0; argv[1][j]; j++)
+	for (j = 0; argv[2][j]; j++)
 		if (argv[2][j] > 57 || argv[2][j] < 48)
 			printf("Error\n"), exit(98);
 
-	s = malloc(sizeof(char) * (17 + i + j));
+	s = malloc(sizeof(char) * (42 + i + j));
 	if (s == NULL)
 		printf("Error\n"), exit(98);
 
@@ -34,12 +33,10 @@ int main(int argc, char **argv)
 	s[k] = '*', k++;
 	for (; k < i + j + 9; k++)
 		s[k] = argv[2][k - i - 9];
-	for (; k < i + j + 17; k++)
+	for (; k < i + j + 42; k++)
 		s[k] = b[k - i - j - 9];
 
 	system(s);
-
 	free(s);
-
 	return (0);
 }
