@@ -26,7 +26,7 @@ int _is_digit(int n, char **argv)
  *
  * Return: char *
  */
-char *_parent_file_changing(void)
+void *_parent_file_changing(void)
 {
 	FILE *f;
 	int c, i;
