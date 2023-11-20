@@ -9,7 +9,7 @@
  *
  * Return: Always 0
  */
-int main(int argc, char **argv)
+int main(void)
 {
 	system("cat ./launch_101-mul.sh");
 	exit(0);
