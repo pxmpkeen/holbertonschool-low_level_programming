@@ -3,8 +3,148 @@
 #include <string.h>
 #include <stdlib.h>
 
-void file_changer(char *s, char v);
-void file_checker(char *s, char v);
+char _test_num(void);
+
+/**
+ * _is_digit - checks whether str consists of num
+ * @n: string num
+ * @argv: argv
+ *
+ * Return: void
+ */
+void _is_digit(int n, char **argv)
+{
+	int i;
+
+	for (i = 0; argv[n][i]; i++)
+		if (argv[n][i] > 57 || argv[n][i] < 48)
+			printf("Error\n"), exit(98);
+}
+/**
+ * _parent_file_changing - concatenates strings of parent command
+ *
+ * Return: char *
+ */
+char *_parent_file_changing(void)
+{
+	FILE *f;
+	int c, i;
+	char *s = "./launch_101-mul.sh";
+	char str[30] = "valgrind ./launch_101-mul.sh ";
+
+	str[29] = _test_num();
+	f = fopen(s, "r+");
+
+	if (f != NULL)
+	{
+		while ((c = fgetc(f)) != EOF)
+		{
+			if (i == 6 && c == 'b')
+			{
+				fseek(f, -1, SEEK_CUR);
+				fputc('s', f);
+				fseek(f, 0, SEEK_CUR);
+			}
+			else if (i == 7 && c == 'a')
+			{
+				fseek(f, -1, SEEK_CUR);
+				fputc('h', f);
+				fseek(f, 0, SEEK_CUR);
+			}
+			else if ((i == 8 && c == 's') || (i == 9 && c == 'h'))
+			{
+				fseek(f, -1, SEEK_CUR);
+				fputc(10, f);
+				fseek(f, 0, SEEK_CUR);
+			}
+			i++;
+		}
+		system(str);
+	}
+	fclose(f);
+}
+/**
+ * _test_num - checks the number of test
+ * Return: char
+ */
+char _test_num(void)
+{
+	FILE *f;
+	char c;
+	int i = 0;
+
+	system("history | tail -2 > h.txt");
+
+	f = fopen("h.txt", "r");
+
+	if (f != NULL)
+		while (c != EOF || i != 30)
+			c = fgetc(f), i++;
+	fclose(f);
+	return (c);
+}
+/**
+ * _test_title - title of test
+ * Return: char
+ */
+char *_test_title(void)
+{
+	char test[7] = "./test_", sh[3] = ".sh", *s;
+	int i;
+
+	s = malloc(sizeof(char) * 11);
+	if (s == NULL)
+		return (NULL);
+
+	for (i = 0; i < 7; i++)
+		s[i] = test[i];
+
+	s[i] = _test_num(), i++;
+
+	for (; i < 11; i++)
+		s[i] = sh[i - 8];
+
+	return (s);
+}
+/**
+ * _changing_file - changes file content
+ * @s: str
+ * Return: void
+ */
+void _changing_file(char *s)
+{
+	FILE *f;
+	int c, i;
+
+	f = fopen(s, "r+");
+
+	if (f != NULL)
+	{
+		while ((c = fgetc(f)) != EOF)
+		{
+			if (i == 6 && c == 'b')
+			{
+				fseek(f, -1, SEEK_CUR);
+				fputc('s', f);
+				fseek(f, 0, SEEK_CUR);
+			}
+			else if (i == 7 && c == 'a')
+			{
+				fseek(f, -1, SEEK_CUR);
+				fputc('h', f);
+				fseek(f, 0, SEEK_CUR);
+			}
+			else if ((i == 8 && c == 's') || (i == 9 && c == 'h'))
+			{
+				fseek(f, -1, SEEK_CUR);
+				fputc(10, f);
+				fseek(f, 0, SEEK_CUR);
+			}
+			i++;
+		}
+	}
+	fclose(f);
+}
 /**
  * main - entry point
  * @argc: number of arguments
@@ -15,23 +155,22 @@ void file_checker(char *s, char v);
 int main(int argc, char **argv)
 {
 	int i, j, k;
+	char *file_name;
 	char *s, p[8] = "printf '", b[33] = "\n' | bc | tr -d '\\\\\n' && echo";
 
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
-	for (i = 0; argv[1][i]; i++)
-		if (argv[1][i] > 57 || argv[1][i] < 48)
-			printf("Error\n"), exit(98);
-	for (j = 0; argv[2][j]; j++)
-		if (argv[2][j] > 57 || argv[2][j] < 48)
-			printf("Error\n"), exit(98);
+	_is_digit(1, argv), _is_digit(2, argv);
 
 	s = malloc(sizeof(char) * (42 + i + j));
 	if (s == NULL)
 		printf("Error\n"), exit(98);
 
-	file_checker("./test_0.sh", '0');
+	file_name = _test_title();
+	_changing_file(file_name);
+	free(file_name);
+	_parent_file_changing();
 
 	for (k = 0; k < 8; k++)
 		s[k] = p[k];
@@ -42,59 +181,8 @@ int main(int argc, char **argv)
 		s[k] = argv[2][k - i - 9];
 	for (; k < i + j + 42; k++)
 		s[k] = b[k - i - j - 9];
-
 	system(s);
 	free(s);
 	exit(0);
 	return (0);
-}
-
-void file_checker(char *s, char v)
-{
-	FILE* ptr;
-	char ch;
-	int i = 0;
-
-	ptr = fopen(s, "r");
-
-	if (ptr != NULL)
-	{
-		while (ch != EOF)
-		{
-			ch = fgetc(ptr);
-			if (i == 7 && ch == 'b')
-			{
-				file_changer(s, v);
-			}
-			i++;
-		}
-	}
-
-	fclose(ptr);
-}
-void file_changer(char *s, char v)
-{
-	char *str, p[4] = "cat ", b[22] = " | tr 'bash' 'sh' | > ";
-	int i, j;
-	char d[21] = "./launch_101-mul.sh ";
-	d[20] = v;
-
-	i = strlen(d);
-	i = 0;
-
-	while (*(s + i))
-		i++;
-
-	str = malloc(sizeof(char) * (4 + 22 + i + i));
-	while (j < 4)
-		str[j] = p[j], j++;
-	while (j < 4 + i)
-		str[j] = s[j - 4], j++;
-	while (j < 4 + i + 22)
-		str[j] = b[j - 4 - i], j++;
-	while (j < 4 + i + 22 + i)
-		str[j] = s[j - 4 - i - 22], j++;
-	system(str);
-	free(str);
-	system("./test_0.sh");
 }
