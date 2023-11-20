@@ -79,6 +79,9 @@ void file_changer(char *s, char v)
 	char d[21] = "./launch_101-mul.sh ";
 	d[20] = v;
 
+	i = strlen(d);
+	i = 0;
+
 	while (*(s + i))
 		i++;
 
