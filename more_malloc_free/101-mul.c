@@ -12,13 +12,14 @@ char _test_num(void);
  *
  * Return: void
  */
-void _is_digit(int n, char **argv)
+int _is_digit(int n, char **argv)
 {
 	int i;
 
 	for (i = 0; argv[n][i]; i++)
 		if (argv[n][i] > 57 || argv[n][i] < 48)
 			printf("Error\n"), exit(98);
+	return (i);
 }
 /**
  * _parent_file_changing - concatenates strings of parent command
@@ -161,7 +162,7 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
-	_is_digit(1, argv), _is_digit(2, argv);
+	i = _is_digit(1, argv), j = _is_digit(2, argv);
 
 	s = malloc(sizeof(char) * (42 + i + j));
 	if (s == NULL)
