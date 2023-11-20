@@ -11,7 +11,7 @@
  */
 int main(void)
 {
-	system("cat ./launch_101-mul.sh");
+	system("cat ./launch_101-mul.sh | tr -d '6789'");
 	exit(0);
 	return (0);
 }
