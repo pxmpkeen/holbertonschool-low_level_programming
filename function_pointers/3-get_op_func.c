@@ -3,8 +3,6 @@
 /**
  * get_op_func - get op func
  * @s: s
- * @n: n
- * @m: m
  * Return: int
  */
 int (*get_op_func(char *s))(int n, int m)

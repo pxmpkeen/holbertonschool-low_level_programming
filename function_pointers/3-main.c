@@ -4,15 +4,15 @@
 #include <string.h>
 /**
  * main - entry point
- * @argc - argc
- * @argv - argv
+ * @argc: argc
+ * @argv: argv
  * Return: Always 0
  */
 int main(int argc, char **argv)
 {
 	int m, n;
 	char *op = argv[2];
-	
+
 	if (argc != 4)
 	{
 		printf("Error\n");
