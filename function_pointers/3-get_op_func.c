@@ -22,7 +22,7 @@ int (*get_op_func(char *s))(int n, int m)
 	while (i < (int)(sizeof(ops) / sizeof(op_t)))
 	{
 		if (*s == *ops[i].s)
-			return ((*ops[i]).(*f));
+			return (ops[i].f);
 		i++;
 	}
 
