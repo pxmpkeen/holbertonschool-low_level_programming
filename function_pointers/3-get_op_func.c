@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <stddef.h>
 /**
  * get_op_func - get op func
  * @s: s
@@ -18,9 +19,9 @@ int (*get_op_func(char *s))(int n, int m)
 	};
 	int i;
 
-	while (i < sizeof(ops) / sizeof(op_t))
+	while (i < (int)(sizeof(ops) / sizeof(op_t)))
 	{
-		if (*s == *(*ops[i]).s)
+		if (*s == *ops[i].s)
 			return ((*ops[i]).(*f));
 		i++;
 	}

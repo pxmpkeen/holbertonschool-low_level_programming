@@ -1,5 +1,5 @@
 #include "3-calc.h"
-#include <stdib.h>
+#include <stdlib.h>
 /**
  * main - entry point
  * @argc - argc
