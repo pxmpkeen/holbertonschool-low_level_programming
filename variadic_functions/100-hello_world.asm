@@ -1,5 +1,5 @@
 section .data
-	txt: db "Hello World" , 0xA
+	txt: db "Hello, World" , 0xA
 	txtl: EQU $ - txt
 
 global main
