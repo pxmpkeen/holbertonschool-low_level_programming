@@ -1,18 +1,18 @@
 section .data
-	message db 'Hello World', 10
+	txt: db "Hello World" , 0xA
+	txtl: EQU $ - txt
+
+global main
 
 section .text
-	global _start
 
-_start:
-	; write the message to stdout
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, message
-	mov edx, 12
-	int 0x80
+main:
+	MOV rax, 0x1
+	MOV rdi, 0x1
+	MOV rsi, txt
+	MOV rdx, txtl
+	SYSCALL
 
-	; exit the program
-	mov eax, 1
-	xor ebx, ebx
-	int 0x80
+	MOV rax, 0x3C
+	MOV rdi, 0x0
+	SYSCALL
