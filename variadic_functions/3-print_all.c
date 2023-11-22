@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 			}
 			while (k && format[i])
 				printf(", "), k = 0;
-		}	
+		}
 	}
 	printf("\n");
 	va_end(ap);
