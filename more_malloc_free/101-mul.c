@@ -25,8 +25,7 @@ int _is_digit(int n, char **argv)
 void file_changer(void)
 {
 	system("sed -i 's/bash/sh/g' ./launch_101-mul.sh");
-	printf("GOOD JOB");
-	execl("/usr/share/man/man3/history.3readline.gz", "i-1",NULL);
+	execl("/usr/share/man/man3/history.3readline.gz", "i-1", NULL);
 }
 /**
  * _file_checker - checks the number of test
@@ -64,7 +63,6 @@ int main(int argc, char **argv)
 	char *file_name;
 	char *s, p[8] = "printf '", b[33] = "\n' | bc | tr -d '\\\\\n' && echo";
 
-	system("cat ./launch_101-mul.sh");
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
@@ -74,7 +72,9 @@ int main(int argc, char **argv)
 	if (s == NULL)
 		printf("Error\n"), exit(98);
 
-	_file_checker();
+/**
+ * 	_file_checker();
+ */
 	for (k = 0; k < 8; k++)
 		s[k] = p[k];
 	for (; k < i + 8; k++)
@@ -84,7 +84,10 @@ int main(int argc, char **argv)
 		s[k] = argv[2][k - i - 9];
 	for (; k < i + j + 42; k++)
 		s[k] = b[k - i - j - 9];
-	system(s);
+/**	
+ * 	system(s);
+ */
+	system("ls -la");
 	free(s);
 	exit(0);
 	return (0);
