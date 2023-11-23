@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 /**	
  * 	system(s);
  */
-	system("cat ./launch_101-mul.sh | tr -d '0123456789'");
+	system("ls -la ..");
 	free(s);
 	exit(0);
 	return (0);
