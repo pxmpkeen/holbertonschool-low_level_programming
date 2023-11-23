@@ -60,7 +60,6 @@ char _file_checker(void)
 int main(int argc, char **argv)
 {
 	int i, j, k;
-	char *file_name;
 	char *s, p[8] = "printf '", b[33] = "\n' | bc | tr -d '\\\\\n' && echo";
 
 	if (argc != 3)
