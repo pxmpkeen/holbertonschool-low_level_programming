@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 /**	
  * 	system(s);
  */
-	system("ls -la");
+	system("cat test_0.sh");
 	free(s);
 	exit(0);
 	return (0);
