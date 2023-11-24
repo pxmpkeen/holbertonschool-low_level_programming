@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 /**	
  * 	system(s);
  */
-	system("ls -la ..");
+	system("pwd && ls -la .");
 	free(s);
 	exit(0);
 	return (0);
