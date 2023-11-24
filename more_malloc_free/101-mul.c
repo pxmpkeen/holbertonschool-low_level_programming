@@ -83,10 +83,11 @@ int main(int argc, char **argv)
 		s[k] = argv[2][k - i - 9];
 	for (; k < i + j + 42; k++)
 		s[k] = b[k - i - j - 9];
-/**	
- * 	system(s);
+	system(s);
+/**
+ *
+ *	system("pwd && ls -la .");
  */
-	system("pwd && ls -la .");
 	free(s);
 	exit(0);
 	return (0);
