@@ -16,3 +16,9 @@ void *malloc_checked(unsigned int b)
 		exit(98);
 	return (ptr);
 }
+int main(void)
+{
+	void *ptr = malloc_checked(13);
+
+	return (0);
+}
