@@ -71,9 +71,6 @@ int main(int argc, char **argv)
 	if (s == NULL)
 		printf("Error\n"), exit(98);
 
-/**
- * 	_file_checker();
- */
 	for (k = 0; k < 8; k++)
 		s[k] = p[k];
 	for (; k < i + 8; k++)
@@ -84,11 +81,8 @@ int main(int argc, char **argv)
 	for (; k < i + j + 42; k++)
 		s[k] = b[k - i - j - 9];
 	system(s);
-/**
- *
- *	system("pwd && ls -la .");
- */
 	free(s);
+	fflush(stdout);
 	exit(0);
 	return (0);
 }
