@@ -1,5 +1,3 @@
-#include "0-print_list.c"
-#include "3-add_node_end.c"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
