@@ -14,7 +14,7 @@ size_t dlistint_len(const dlistint_t *h)
 	if (!h)
 		return (size);
 	while (h)
-	'{
+	{
 		h = (*h).next;
 		size++;
 	}
