@@ -13,7 +13,9 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	dlistint_t *temp = head;
 	unsigned int n = 0;
 
-	while ((*temp).next)
+	if (!temp)
+		return (NULL);
+	while (temp)
 	{
 		if (n == index)
 			return (temp);
