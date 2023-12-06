@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 		if (!(b[len] == '1' || b[len] == '0'))
 			return (0);
 		res += (unsigned int)((b[len] - 48) * dec);
-		dec*= 2;
+		dec *= 2;
 		len--;
 	}
 	return (res);
