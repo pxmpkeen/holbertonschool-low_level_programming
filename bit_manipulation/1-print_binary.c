@@ -1,4 +1,5 @@
 #include <stdio.h>
+void print_bin(unsigned long int n);
 /**
  * print_binary -  prints the binary representation of a number.
  * @n: number to convert
