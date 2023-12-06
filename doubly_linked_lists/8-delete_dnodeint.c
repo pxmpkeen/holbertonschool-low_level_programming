@@ -20,6 +20,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if ((*temp).next)
 			(*(**head).next).prev = NULL;
 		*head = (**head).next;
+		free(temp);
 		return (1);
 	}
 	while (temp_index < index)
@@ -32,6 +33,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	(*(*temp).prev).next = (*temp).next;
 	if ((*temp).next)
 		(*(*temp).next).prev = (*temp).prev;
+	free(temp);
 	return (1);
 }
 /*NIGAR <3*/
