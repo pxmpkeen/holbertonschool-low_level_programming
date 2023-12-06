@@ -7,8 +7,20 @@ void print_binary(unsigned long int n)
 {
 	if (!n)
 	{
+		putchar(48);
+	}
+	print_bin(n);
+}
+/**
+ * print_bin - helper
+ * @n: number to convert
+ */
+void print_bin(unsigned long int n)
+{
+	if (!n)
+	{
 		return;
 	}
-	print_binary(n >> 1);
+	print_bin(n >> 1);
 	putchar((n & 1) + 48);
 }
