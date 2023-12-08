@@ -6,7 +6,7 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int counter = 0, k = m ^ n;
+	unsigned long int counter = 0, k = m ^ n;
 
 	while (k)
 	{
@@ -14,5 +14,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 			counter++;
 		k >>= 1;
 	}
-	return (counter);
+	return ((unsigned int)counter);
 }
