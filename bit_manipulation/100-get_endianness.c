@@ -6,7 +6,7 @@
  */
 int get_endianness(void)
 {
-	short lab_rat_duo = 1; 
+	short lab_rat_duo = 1;
 	char *cell = (char *)&lab_rat_duo;
 
 	return (*cell);
