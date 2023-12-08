@@ -8,7 +8,7 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int k = (int)sizeof(unsigned long int) * 8;
+	unsigned int k = (int)sizeof(unsigned long int) * 8;
 
 	n >>= index;
 	return ((index < k) * (n & 1) + (-1) * (index >= k));
