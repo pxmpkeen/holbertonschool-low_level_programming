@@ -1,7 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
 /**
  * read_textfile - reads text file
  * @filename: filename
@@ -13,7 +10,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd;
 	char *c = calloc(letters, sizeof(char));
 
-	if (!filename || !c);
+	if (!filename || !c)
 		return (0);
 
 	fd = open(filename, O_WRONLY);
