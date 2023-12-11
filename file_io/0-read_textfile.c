@@ -8,6 +8,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
+	ssize_t sz;
 	char *c = calloc(letters, sizeof(char));
 
 	if (!filename || !c)
@@ -18,5 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd < 0)
 		return (0);
 
-	return (write(fd, c, letters));
+	sz = write(fd, c, letters);
+	close(filename);
+	return (sz);
 }
