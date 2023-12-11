@@ -13,7 +13,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	char *c, *d = "";
+	char *d = "";
 	int fd, w;
 
 	if (!filename)
@@ -21,8 +21,8 @@ int create_file(const char *filename, char *text_content)
 
 	fd = open(filename, O_RDONLY | O_CREAT, 600);
 
-	w = !text_context ? write(fd, d, 1) :
-		write(fd, text_context, strlen(text_context));
+	w = !text_content ? write(fd, d, 1) :
+		write(fd, text_content, strlen(text_content));
 
 	close(fd);
 	return (w);
