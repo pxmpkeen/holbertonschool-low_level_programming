@@ -15,7 +15,7 @@
  */
 void exit_func(int err, char *s, char *fn)
 {
-	dpirntf(STDERR_FILENO, "%s %s\n", s, fn);
+	dprintf(STDERR_FILENO, "%s %s\n", s, fn);
 	exit(err);
 }
 /**
