@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
@@ -26,7 +27,7 @@ void exit_func(int err, char *s, char *fn)
 int main(int argc, char **argv)
 {
 	char *text;
-	int fd, on, rf, wn, cf, cn;
+	int fd, rf, on, wn, cf, cn;
 	if (argc != 3)
 		exit_func(97, "Usage: cp file_from file_to", "");
 	fd = open(argv[1], O_RDONLY);
@@ -34,7 +35,7 @@ int main(int argc, char **argv)
 	if (fd == -1 || !text)
 		free(text), exit_func(98, "Error: Can't read from file", argv[1]);
 	rf = read(fd, text, BUFFER_SIZE);
-	if (sz == -1)
+	if (rf == -1)
 		free(text), exit_func(98, "Error: Can't read from file", argv[1]);
 	on = open(argv[2], O_CREAT, O_WRONLY, O_TRUNC, 0664);
 	if (on == -1)
