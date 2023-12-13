@@ -5,6 +5,7 @@
 #include <errno.h>
 #include <string.h>
 #include <fcntl.h>
+#include <stdio.h>
 /**
  * buf_crt - creates buffer
  * @f: file
@@ -66,7 +67,7 @@ int main(int argc, char **argv)
 		if (dest == -1 || w == -1)
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n",
-				argv[2]), free(buffer), exit(99);
+				argv[2]), free(buf), exit(99);
 
 		r = read(init, buf, 1024);
 		dest = open(argv[2], O_WRONLY | O_APPEND);
