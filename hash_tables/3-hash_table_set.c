@@ -10,7 +10,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int index;
+	unsigned long int index;
 	hash_node_t *node, *temp;
 
 	if (!ht || !key || !(*key) || !value)
@@ -45,4 +45,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	(*temp).next = node;
 
 	return (1);
+}
+int main(void)
+{
+    hash_table_t *ht;
+
+    ht = hash_table_create(1024);
+    hash_table_set(ht, "betty", "cool");
+    return (EXIT_SUCCESS);
 }
