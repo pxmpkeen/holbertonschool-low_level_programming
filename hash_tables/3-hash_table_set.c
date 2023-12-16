@@ -42,7 +42,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	(*node).next = NULL;
-	(*temp).next = node;
+	if (temp)
+		(*temp).next = node;
 
 	return (1);
 }
