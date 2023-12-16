@@ -2,28 +2,28 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * hash_table_get - gets item of hash table
+ * hash_table_print - prints item of hash table
  * @ht: hash_table_t
- * @key: key
- * Return: char *
  */
-char *hash_table_get(const hash_table_t *ht, const char *key)
+void hasoh_table_print(const hash_table_t *ht)
 {
-	unsigned long int index;
+	unsigned long int index = 0;
 	hash_node_t *temp;
 
-	if (!key || !ht || !(*key))
-		return (NULL);
-	index = key_index((unsigned char *)key, (*ht).size);
-	temp = (*ht).array[index];
-	while (temp)
+	if (!ht)
+		return;
+	printf("{");
+	while ((*ht).array[i])
 	{
-		if (!strcmp((*temp).key, key))
-			break;
-		temp = (*temp).next;
+		temp = (*ht).array[i];
+		while (temp)
+		{
+			printf("'%s': '%s'", (*temp).key, (*temp).value);
+			if ((*temp).next)
+				printf(", ");
+			temp = (*temp).next;
+		}
+		i++;
 	}
-	if (temp)
-		return ((*temp).value);
-	else
-		return (NULL);
+	printf("}");
 }
