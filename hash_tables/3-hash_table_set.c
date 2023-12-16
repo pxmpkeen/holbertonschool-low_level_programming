@@ -32,13 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!(*node).key || !(*node).value)
 		return (0);
 
-	if (temp)
-	{
-		if (!strcmp((*temp).key, key))
-			(*node).next = NULL;
-	}
-	else if (!temp || strcmp((*temp).key, key))
-		(*node).next = temp;
+	(*node).next = temp;
 	(*ht).array[index] = node;
 
 	return (1);
