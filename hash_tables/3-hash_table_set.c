@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 /**
  * hash_table_set - creates node and stores data into hash table
  * @ht: hash table itself
@@ -37,14 +38,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	(*ht).array[index] = node;
 	temp = node;
 
-	while ((*temp).next)
+	while (temp)
 	{
-		if (!strcmp((*(*temp).next).key, key))
-		{
-			buffer = (*temp).next;
-			(*temp).next = (*buffer).next;
-			free((*buffer).value), free((*buffer).key), free(buffer);
-		}
+		if (temp && (*temp).next)
+			if (!strcmp((*(*temp).next).key, key))
+			{
+				buffer = (*temp).next;
+				(*temp).next = (*buffer).next;
+				free((*buffer).value), free((*buffer).key);
+				free((*buffer).next);
+			}
 		temp = (*temp).next;
 	}
 	return (1);
