@@ -19,24 +19,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((unsigned char *)key, (*ht).size);
-	buffer = temp = (*ht).array[index], node = malloc(sizeof(hash_node_t));
+	temp = (*ht).array[index];
+	node = malloc(sizeof(hash_node_t));
 
 	if (!node)
 		return (0);
 
-	while (temp)
-	{
-		if (!strcmp((*temp).key, key))
-		{
-			free((*temp).value), (*temp).value = strdup(value);
-			if (!(*temp).value)
-				return (0);
-			return (1);
-		}
-		temp = (*temp).next;
-	}
-
-	(*node).key = strdup(key), (*node).value = strdup(value);
+	(*node).key = strdup(key);
+	(*node).value = strdup(value);
 
 	if (!(*node).key || !(*node).value)
 	{
@@ -44,7 +34,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-	(*node).next = buffer;
+	(*node).next = temp;
 	(*ht).array[index] = node;
+	temp = node;
+
+	while (temp)
+	{
+		if (temp && (*temp).next)
+			if (!strcmp((*(*temp).next).key, key))
+			{
+				buffer = (*temp).next;
+				(*temp).next = (*buffer).next;
+				free((*buffer).value), free((*buffer).key);
+				free(buffer);
+			}
+		temp = (*temp).next;
+	}
 	return (1);
 }
