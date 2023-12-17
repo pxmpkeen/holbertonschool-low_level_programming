@@ -46,7 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				buffer = (*temp).next;
 				(*temp).next = (*buffer).next;
 				free((*buffer).value), free((*buffer).key);
-				free((*buffer).next);
+				free(buffer);
 			}
 		temp = (*temp).next;
 	}
