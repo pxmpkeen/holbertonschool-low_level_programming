@@ -1,5 +1,4 @@
-HASH TABLES
-#How are they working?
+Hash tables and How are they working?
 
 There is given two structures:
 The first one is hash table itself
