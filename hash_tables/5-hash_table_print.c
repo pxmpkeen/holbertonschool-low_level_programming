@@ -7,6 +7,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0;
+	char flag = 0;
 	hash_node_t *temp;
 
 	if (!ht)
@@ -22,9 +23,10 @@ void hash_table_print(const hash_table_t *ht)
 			printf("'%s': '%s'", (*temp).key, (*temp).value);
 			if ((*temp).next)
 				printf(", ");
+			flga = 1;
 			temp = (*temp).next;
 		}
-		if ((*ht).array[i + 1])
+		if ((*ht).array[i + 1] && flag)
 			printf(", ");
 		i++;
 	}
